@@ -17,6 +17,9 @@ const Landing = () => {
       setClientX(e.clientX);
       setClientY(e.clientY);
     });
+    window.addEventListener("scroll", (e) => {
+      console.log(window.scrollY);
+    });
   }, []);
 
   return (
@@ -91,13 +94,12 @@ const Landing = () => {
           <h1
             style={{
               fontSize:
-                windowSize > global.SYSTEM.MOBILE_WIDTH ? "14vw" : "4em",
+                windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "4em",
               fontFamily: archivoFont,
               color: "#fff",
             }}
           >
-            <span className="gradient-text">☺</span> I'M A JUNIOR FRONT END
-            DEVELOPER AND A COMPUTER SCIENCE STUDENT
+            I'M A JUNIOR FRONT END DEVELOPER AND A COMPUTER SCIENCE STUDENT
             <span className="gradient-text">☺︎</span>
           </h1>
         </div>
