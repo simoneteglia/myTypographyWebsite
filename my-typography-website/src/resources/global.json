@@ -1,0 +1,16 @@
+{
+  "GUI": {
+    "NERO": "#010101",
+    "GIALLO": "#f1f57f",
+    "ARANCIONE": "#ED773E",
+    "AZZURRO": "#3AD9F0",
+    "VIOLA": "#9332ED",
+    "ROSA": "#f96472",
+    "CREMA": "#f3e6c7",
+    "BLU": "#073394"
+  },
+  "SYSTEM": {
+    "MOBILE_WIDTH": "480",
+    "TABLET_WIDTH": "768"
+  }
+}
