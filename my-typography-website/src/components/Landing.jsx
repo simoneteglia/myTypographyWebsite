@@ -23,7 +23,7 @@ const Landing = () => {
     <>
       <div
         style={{
-          position: "absolute",
+          position: "fixed",
           top: clientY - 100,
           left: clientX - 100,
         }}
@@ -39,7 +39,7 @@ const Landing = () => {
                 a 37,37 0 1,1 -74,0"
             />
           </defs>
-          <text font-size="15">
+          <text fontSize="15">
             <textPath xlinkHref="#circle">SCROLL DOWN - SCROLL DOWN -</textPath>
           </text>
         </svg>
@@ -96,8 +96,8 @@ const Landing = () => {
               color: "#fff",
             }}
           >
-            <span className="gradient-text">☹︎</span> I'M A JUNIOR FRONT END
-            DEVELOPER AND A COMPUTER SCIENCE STUDENT{" "}
+            <span className="gradient-text">☺</span> I'M A JUNIOR FRONT END
+            DEVELOPER AND A COMPUTER SCIENCE STUDENT
             <span className="gradient-text">☺︎</span>
           </h1>
         </div>
