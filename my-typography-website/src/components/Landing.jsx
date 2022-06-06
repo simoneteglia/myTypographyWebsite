@@ -18,9 +18,6 @@ const Landing = () => {
       setClientX(e.clientX);
       setClientY(e.clientY);
     });
-    window.addEventListener("scroll", (e) => {
-      console.log(window.scrollY);
-    });
     Scrollbar.init(document.querySelector("#text-container"), {
       damping: 0.06,
     });
@@ -104,11 +101,21 @@ const Landing = () => {
                 windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "8vw",
               fontFamily: archivoFont,
               color: "#fff",
+              marginTop: "0px",
             }}
+            className="typo"
           >
             I'M A JUNIOR FRONT END DEVELOPER AND AN ENGINEERING IN COMPUTER
             SCIENCE STUDENT
-            <span className="gradient-text">☺︎</span>
+            <span
+              className="gradient-text"
+              style={{
+                display:
+                  windowSize > global.SYSTEM.MOBILE_WIDTH ? "initial" : "none",
+              }}
+            >
+              ☺︎
+            </span>
           </h1>
         </div>
       </div>

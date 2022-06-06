@@ -18,7 +18,7 @@ svg {
   fill: currentColor;
   transform-origin: center;
   animation: svgRotation 10s linear infinite;
-  color: deeppink;
+  color: white;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -29,6 +29,14 @@ svg {
   to {
     transform: rotate(360deg);
   }
+}
+
+.typo {
+  background: url("/public/gradient.png");
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .gradient-text {
