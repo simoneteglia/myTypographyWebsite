@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import global from "../resources/global.json";
+import Scrollbar from "smooth-scrollbar";
 import "../index.css";
 import "../App.css";
 const archivoFont = "'Archivo', sans-serif";
@@ -20,6 +21,9 @@ const Landing = () => {
     window.addEventListener("scroll", (e) => {
       console.log(window.scrollY);
     });
+    Scrollbar.init(document.querySelector("#text-container"), {
+      damping: 0.06,
+    });
   }, []);
 
   return (
@@ -29,6 +33,8 @@ const Landing = () => {
           position: "fixed",
           top: clientY - 100,
           left: clientX - 100,
+          zIndex: 1000,
+          pointerEvents: "none",
         }}
       >
         <svg viewBox="0 0 100 100" width="200" height="200">
@@ -50,9 +56,10 @@ const Landing = () => {
       <div
         style={{
           width: "100%",
+          height: "100vh",
           backgroundColor: "#000",
           transition: "all 0.5s ease",
-          overflowX: "hidden",
+          overflow: "auto",
         }}
       >
         {/* HEADER */}
@@ -60,12 +67,10 @@ const Landing = () => {
           style={{
             height: "20vh",
             width: "100%",
-            position: "fixed",
             top: 0,
             display: "flex",
             alignItems: "center",
             backgroundColor: "#000",
-            zIndex: 999,
             transition: "all 0.5s ease",
           }}
         >
@@ -85,10 +90,12 @@ const Landing = () => {
           </h1>
         </div>
         <div
+          id="text-container"
           style={{
-            borderBottom: "2px solid #fff",
-            marginTop: "20vh",
-            maxWidth: "100%",
+            //borderBottom: "2px solid #fff",
+            marginBottom: "-100px",
+            height: "80vh",
+            overflow: "scroll",
           }}
         >
           <h1
@@ -97,9 +104,11 @@ const Landing = () => {
                 windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "4em",
               fontFamily: archivoFont,
               color: "#fff",
+              marginTop: "-10px",
             }}
           >
-            I'M A JUNIOR FRONT END DEVELOPER AND A COMPUTER SCIENCE STUDENT
+            I'M A JUNIOR FRONT END DEVELOPER AND AN ENGINEERING IN COMPUTER
+            SCIENCE STUDENT
             <span className="gradient-text">☺︎</span>
           </h1>
         </div>
