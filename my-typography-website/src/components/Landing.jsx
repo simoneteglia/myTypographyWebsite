@@ -101,10 +101,9 @@ const Landing = () => {
           <h1
             style={{
               fontSize:
-                windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "4em",
+                windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "8vw",
               fontFamily: archivoFont,
               color: "#fff",
-              marginTop: "-10px",
             }}
           >
             I'M A JUNIOR FRONT END DEVELOPER AND AN ENGINEERING IN COMPUTER
