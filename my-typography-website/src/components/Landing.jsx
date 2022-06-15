@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import global from "../resources/global.json";
 import Scrollbar from "smooth-scrollbar";
 import "../index.css";
@@ -22,6 +22,8 @@ const Landing = () => {
       damping: 0.06,
     });
   }, []);
+
+  const frontRef = useRef();
 
   return (
     <>
@@ -67,7 +69,7 @@ const Landing = () => {
             top: 0,
             display: "flex",
             alignItems: "center",
-            backgroundColor: "#000",
+            backgroundColor: "blue",
             transition: "all 0.5s ease",
           }}
         >
@@ -103,11 +105,22 @@ const Landing = () => {
               color: "#fff",
               marginTop: "0px",
             }}
-            className="typo"
           >
-            I'M A JUNIOR FRONT END DEVELOPER AND AN ENGINEERING IN COMPUTER
-            SCIENCE STUDENT
+            I'M A JUNIOR FRONT END{" "}
             <span
+              ref={frontRef}
+              style={{ transition: "all 0.4s ease-in-out" }}
+              onMouseEnter={() => {
+                frontRef.current.style.color = "blue";
+              }}
+              onMouseLeave={() => {
+                frontRef.current.style.color = "white";
+              }}
+            >
+              DEVELOPER
+            </span>{" "}
+            AND AN ENGINEERING IN COMPUTER SCIENCE STUDENT
+            {/* <span
               className="gradient-text"
               style={{
                 display:
@@ -115,7 +128,7 @@ const Landing = () => {
               }}
             >
               ☺︎
-            </span>
+            </span> */}
           </h1>
         </div>
       </div>
