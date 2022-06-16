@@ -19,7 +19,7 @@ svg {
   fill: currentColor;
   transform-origin: center;
   animation: svgRotation 10s linear infinite;
-  color: deeppink;
+  color: white;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */

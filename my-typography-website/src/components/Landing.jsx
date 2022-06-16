@@ -9,6 +9,9 @@ const Landing = () => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [clientX, setClientX] = useState(-200);
   const [clientY, setClientY] = useState(-200);
+  const [distanceX, setDistanceX] = useState(50);
+  const [centerX, setCenterX] = useState(50);
+  const [centerY, setCenterY] = useState(50);
 
   useEffect(() => {
     document.addEventListener("resize", (e) => {
@@ -17,13 +20,21 @@ const Landing = () => {
     document.addEventListener("mousemove", (e) => {
       setClientX(e.clientX);
       setClientY(e.clientY);
+      const { x, y } = e;
+      let distanceX =
+        (Math.abs(x - window.innerWidth / 2) / (window.innerWidth / 2)) * 100;
+      setDistanceX(distanceX);
+
+      let centerX = (x / window.innerWidth) * 100;
+      setCenterX(100 - centerX);
+
+      let centerY = (y / window.innerHeight) * 100;
+      setCenterY(100 - centerY);
     });
     Scrollbar.init(document.querySelector("#text-container"), {
       damping: 0.06,
     });
   }, []);
-
-  const frontRef = useRef();
 
   return (
     <>
@@ -69,7 +80,7 @@ const Landing = () => {
             top: 0,
             display: "flex",
             alignItems: "center",
-            backgroundColor: "blue",
+            backgroundColor: "mediumslateblue",
             transition: "all 0.5s ease",
           }}
         >
@@ -102,33 +113,21 @@ const Landing = () => {
               fontSize:
                 windowSize > global.SYSTEM.MOBILE_WIDTH ? "12vw" : "8vw",
               fontFamily: archivoFont,
-              color: "#fff",
               marginTop: "0px",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+
+              background: `radial-gradient(ellipse at ${centerX * 0.8}% ${
+                centerY * 0.8
+              }%, #e66465 ${
+                distanceX * 0.2
+              }%, transparent 100%), radial-gradient(farthest-corner at 40px 40px,
+          #f35 0%, #43e 100%)`,
             }}
           >
-            I'M A JUNIOR FRONT END{" "}
-            <span
-              ref={frontRef}
-              style={{ transition: "all 0.4s ease-in-out" }}
-              onMouseEnter={() => {
-                frontRef.current.style.color = "blue";
-              }}
-              onMouseLeave={() => {
-                frontRef.current.style.color = "white";
-              }}
-            >
-              DEVELOPER
-            </span>{" "}
-            AND AN ENGINEERING IN COMPUTER SCIENCE STUDENT
-            {/* <span
-              className="gradient-text"
-              style={{
-                display:
-                  windowSize > global.SYSTEM.MOBILE_WIDTH ? "initial" : "none",
-              }}
-            >
-              ☺︎
-            </span> */}
+            I'M A JUNIOR FRONT END DEVELOPER AND AN ENGINEERING IN COMPUTER
+            SCIENCE STUDENT
           </h1>
         </div>
       </div>
